@@ -18,16 +18,16 @@ const CarouselPage = () => {
   }, []);
 
   const photos = [
-    { id: 1, title: 'PHOTO 01', url: '/unnamed.jpg' },
-    { id: 2, title: 'PHOTO 02', url: '/unnamed-2.jpg' },
-    { id: 3, title: 'PHOTO 03', url: '/unnamed-3.jpg' },
-    { id: 4, title: 'PHOTO 04', url: '/unnamed-4.jpg' },
-    { id: 5, title: 'PHOTO 05', url: '/unnamed-5.jpg' },
-    { id: 6, title: 'PHOTO 06', url: '/unnamed-6.jpg' },
-    { id: 7, title: 'PHOTO 07', url: '/unnamed-7.jpg' },
-    { id: 8, title: 'PHOTO 08', url: '/unnamed-8.jpg' },
-    { id: 9, title: 'PHOTO 09', url: '/unnamed-9.jpg' },
-    { id: 10, title: 'PHOTO 10', url: '/unnamed-10.jpg' },
+    { id: 1, title: 'PHOTO 01', url: '/unnamed.jpg', fallback: 'https://picsum.photos/seed/photo1/400/600' },
+    { id: 2, title: 'PHOTO 02', url: '/unnamed-2.jpg', fallback: 'https://picsum.photos/seed/photo2/400/600' },
+    { id: 3, title: 'PHOTO 03', url: '/unnamed-3.jpg', fallback: 'https://picsum.photos/seed/photo3/400/600' },
+    { id: 4, title: 'PHOTO 04', url: '/unnamed-4.jpg', fallback: 'https://picsum.photos/seed/photo4/400/600' },
+    { id: 5, title: 'PHOTO 05', url: '/unnamed-5.jpg', fallback: 'https://picsum.photos/seed/photo5/400/600' },
+    { id: 6, title: 'PHOTO 06', url: '/unnamed-6.jpg', fallback: 'https://picsum.photos/seed/photo6/400/600' },
+    { id: 7, title: 'PHOTO 07', url: '/unnamed-7.jpg', fallback: 'https://picsum.photos/seed/photo7/400/600' },
+    { id: 8, title: 'PHOTO 08', url: '/unnamed-8.jpg', fallback: 'https://picsum.photos/seed/photo8/400/600' },
+    { id: 9, title: 'PHOTO 09', url: '/unnamed-9.jpg', fallback: 'https://picsum.photos/seed/photo9/400/600' },
+    { id: 10, title: 'PHOTO 10', url: '/unnamed-10.jpg', fallback: 'https://picsum.photos/seed/photo10/400/600' },
   ];
 
   const itemCount = photos.length;
@@ -113,12 +113,12 @@ const CarouselPage = () => {
                 }}
                 onClick={() => setSelectedImage(photo)}
               >
-                <img 
-                  src={photo.url} 
+                <img
+                  src={photo.url}
                   alt={photo.title}
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   draggable={false}
-                  onError={(e) => { e.target.src = "https://via.placeholder.com/400x600?text=NO+IMAGE"; }}
+                  onError={(e) => { e.target.onerror = null; e.target.src = photo.fallback; }}
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center p-4">
                    <p className="text-white text-[7px] text-center leading-loose">{photo.title}</p>
@@ -146,11 +146,11 @@ const CarouselPage = () => {
              onClick={() => setSelectedImage(null)}>
           <button className="absolute top-8 right-8 text-zinc-900 hover:scale-125 transition"><X className="w-10 h-10" /></button>
           <div className="max-w-4xl w-full flex flex-col items-center gap-6" onClick={e => e.stopPropagation()}>
-            <img 
-              src={selectedImage.url} 
+            <img
+              src={selectedImage.url}
               className="max-w-full max-h-[75vh] border-[12px] border-white shadow-2xl bg-white p-1"
               alt={selectedImage.title}
-              onError={(e) => { e.target.src = "https://via.placeholder.com/800x1200?text=NO+IMAGE"; }}
+              onError={(e) => { e.target.onerror = null; e.target.src = selectedImage.fallback; }}
             />
             <h4 className="text-zinc-900 text-[10px] bg-white px-4 py-2 font-bold">{selectedImage.title}</h4>
           </div>
