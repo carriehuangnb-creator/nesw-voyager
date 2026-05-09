@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import HomePage from './pages/HomePage';
 import CarouselPage from './pages/CarouselPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -13,10 +11,6 @@ const App = () => {
     switch (currentPage) {
       case 'carousel':
         return <CarouselPage />;
-      case 'about':
-        return <AboutPage />;
-      case 'contact':
-        return <ContactPage />;
       default:
         return <HomePage setCurrentPage={setCurrentPage} />;
     }
@@ -69,22 +63,6 @@ const App = () => {
               >
                 GALLERY
               </button>
-              <button
-                onClick={() => setCurrentPage('about')}
-                className={`text-[8px] font-bold transition nav-link ${
-                  currentPage === 'about' ? 'text-blue-600' : 'text-zinc-900'
-                }`}
-              >
-                ABOUT
-              </button>
-              <button
-                onClick={() => setCurrentPage('contact')}
-                className={`text-[8px] font-bold transition nav-link ${
-                  currentPage === 'contact' ? 'text-blue-600' : 'text-zinc-900'
-                }`}
-              >
-                CONTACT
-              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -116,24 +94,6 @@ const App = () => {
                 className="text-[8px] font-bold text-zinc-900 text-left hover:text-blue-600"
               >
                 GALLERY
-              </button>
-              <button
-                onClick={() => {
-                  setCurrentPage('about');
-                  setMobileMenuOpen(false);
-                }}
-                className="text-[8px] font-bold text-zinc-900 text-left hover:text-blue-600"
-              >
-                ABOUT
-              </button>
-              <button
-                onClick={() => {
-                  setCurrentPage('contact');
-                  setMobileMenuOpen(false);
-                }}
-                className="text-[8px] font-bold text-zinc-900 text-left hover:text-blue-600"
-              >
-                CONTACT
               </button>
             </div>
           )}
