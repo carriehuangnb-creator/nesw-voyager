@@ -18,16 +18,16 @@ const CarouselPage = () => {
   }, []);
 
   const photos = [
-    { id: 1, title: 'ROCK TEXTURE', url: '/unnamed.jpg' },
-    { id: 2, title: 'SUN HALO', url: '/unnamed-2.jpg' },
-    { id: 3, title: 'ALLEY VIEW', url: '/unnamed-3.jpg' },
-    { id: 4, title: 'MORNING STREET', url: '/unnamed-4.jpg' },
-    { id: 5, title: 'LONELY BOAT', url: '/unnamed-5.jpg' },
-    { id: 6, title: 'BLUE ALLEY', url: '/unnamed-6.jpg' },
-    { id: 7, title: 'GRID SUNSET', url: '/unnamed-7.jpg' },
-    { id: 8, title: 'BEACH FOOTPRINT', url: '/unnamed-8.jpg' },
-    { id: 9, title: 'COCONUT GLASS', url: '/unnamed-9.jpg' },
-    { id: 10, title: 'PAW PRINT', url: '/unnamed-10.jpg' },
+    { id: 1, title: 'PHOTO 01', url: '/unnamed.jpg' },
+    { id: 2, title: 'PHOTO 02', url: '/unnamed-2.jpg' },
+    { id: 3, title: 'PHOTO 03', url: '/unnamed-3.jpg' },
+    { id: 4, title: 'PHOTO 04', url: '/unnamed-4.jpg' },
+    { id: 5, title: 'PHOTO 05', url: '/unnamed-5.jpg' },
+    { id: 6, title: 'PHOTO 06', url: '/unnamed-6.jpg' },
+    { id: 7, title: 'PHOTO 07', url: '/unnamed-7.jpg' },
+    { id: 8, title: 'PHOTO 08', url: '/unnamed-8.jpg' },
+    { id: 9, title: 'PHOTO 09', url: '/unnamed-9.jpg' },
+    { id: 10, title: 'PHOTO 10', url: '/unnamed-10.jpg' },
   ];
 
   const itemCount = photos.length;
